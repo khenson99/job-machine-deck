@@ -348,17 +348,86 @@ p, .body {
 /* Responsive */
 @media (max-width: 768px) {
   .slide {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-sm);
   }
   
+  /* Force all grids to stack vertically on mobile */
   .grid-2,
   .grid-3 {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-md);
+  }
+  
+  /* Adjust typography for mobile */
+  h1, .h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+  
+  h2, .h2 {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+  
+  h3, .h3 {
+    font-size: clamp(1.125rem, 6vw, 1.5rem);
+  }
+  
+  p, .body {
+    font-size: clamp(0.9rem, 4vw, 1.125rem);
+  }
+  
+  /* Make navigation touch-friendly */
+  .navigation {
+    bottom: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .nav-button {
+    font-size: 1.5rem;
+    padding: var(--spacing-sm);
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .slide-counter {
+    font-size: 1rem;
+    min-width: 80px;
+  }
+  
+  /* Make cards more compact on mobile */
+  .card {
+    padding: var(--spacing-md);
+  }
+  
+  /* Adjust metric sizing for mobile */
+  .metric {
+    font-size: clamp(1.5rem, 8vw, 2.5rem) !important;
+  }
+  
+  .metric-label {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+  }
+}
+
+/* Extra small devices (phones in portrait) */
+@media (max-width: 480px) {
+  .slide {
+    padding: var(--spacing-sm);
+  }
+  
+  h1, .h1 {
+    font-size: clamp(1.75rem, 10vw, 2.5rem);
+  }
+  
+  h2, .h2 {
+    font-size: clamp(1.25rem, 8vw, 1.75rem);
+  }
+  
+  .card {
+    padding: var(--spacing-sm);
   }
   
   .navigation {
-    bottom: var(--spacing-sm);
-    padding: var(--spacing-xs) var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-sm);
   }
 }
 
